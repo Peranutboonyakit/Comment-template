@@ -8,4 +8,4 @@ In the project directory, you can run:
 
 Or
 
-[Comment-template](https://comment-template.vercel.app/)
+[Comment-template-responsive](https://comment-template.vercel.app/)
