@@ -70,9 +70,9 @@ function App() {
   return (
     <div className="bg-gray-200">
       <div className="min-h-screen mx-auto p-6 desktop:pt-6 desktop:w-[1440px]">
-        <div className=" w-full h-full">
+        <div className="w-full h-full ">
           <p className="text-2xl font-bold">MAQE Forum</p>
-          <p className="text-2xl mt-6">
+          <p className="mt-6 text-2xl">
             Your current timezone is: Asia/Bangkok
           </p>
           <div className="mt-4 max-h-[41rem] overflow-y-scroll">
@@ -85,24 +85,26 @@ function App() {
                     background: handleColorBox(index) ? "#D9F5FF" : "white",
                   }}
                 >
-                  <div className="border-b px-4 py-3 flex items-center space-x-2">
-                    <img
-                      src={handleAuthor(item.author_id).img}
-                      className="w-6 rounded-full"
-                    />
-                    <p className="text-orange-600 font-medium">
-                      {handleAuthor(item.author_id).name}
-                    </p>
-                    <p className="text-gray-400 font-medium">{`posted on ${dayjs(
+                  <div className="items-center px-4 py-3 border-b tablet:space-x-2 tablet:flex">
+                    <div className="flex items-center">
+                      <img
+                        src={handleAuthor(item.author_id).img}
+                        className="w-6 rounded-full"
+                      />
+                      <p className="ml-2 font-medium text-orange-600">
+                        {handleAuthor(item.author_id).name}
+                      </p>
+                    </div>
+                    <p className="font-medium text-gray-400">{`posted on ${dayjs(
                       item.created_at
                     ).format("dddd, MMMM D, YYYY, HH:mm")}`}</p>
                   </div>
-                  <div className="p-4 flex">
+                  <div className="p-4 tablet:flex">
                     <img
                       src={item.image_url || ""}
-                      className="h-full w-[280px] flex-shrink-0"
+                      className="h-[220px] w-full tablet:h-full tablet:w-[280px] flex-shrink-0"
                     />
-                    <div className="ml-4">
+                    <div className="tablet:ml-4">
                       <p className="font-semibold text-[20px]">
                         {item.title || "-"}
                       </p>
